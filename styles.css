@@ -1,0 +1,613 @@
+/* Premium Water Quality Monitoring Dashboard - Aqua Insights Theme */
+:root {
+  /* Modern gradient theme */
+  --primary: #0a9396;
+  --primary-light: #94d2bd;
+  --primary-dark: #005f73;
+  --accent: #ee9b00;
+  --accent-light: #f9c74f;
+  --text-dark: #001219;
+  --text-light: #f8f9fa;
+  --background: #e9f5f9;
+  --card-bg: #ffffff;
+  --success: #52b788;
+  --warning: #ee9b00;
+  --danger: #ae2012;
+  --neutral: #6b7280;
+  
+  /* Layout variables */
+  --border-radius: 12px;
+  --border-radius-sm: 6px;
+  --shadow: 0 10px 30px rgba(0, 95, 115, 0.1);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --header-height: 70px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, var(--background) 100%);
+  color: var(--text-dark);
+  line-height: 1.7;
+  padding: 30px 0;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 92%;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 40px 35px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative water elements */
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.container::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(10, 147, 150, 0.08) 0%, rgba(10, 147, 150, 0) 70%);
+  top: -100px;
+  right: -100px;
+}
+
+.container::after {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(238, 155, 0, 0.06) 0%, rgba(238, 155, 0, 0) 70%);
+  bottom: -100px;
+  left: -50px;
+}
+
+h1 {
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 2.8rem;
+  position: relative;
+  padding-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  border-radius: 5px;
+}
+
+h2 {
+  color: var(--primary);
+  margin: 35px 0 25px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* Filter section styling */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 35px 0;
+  padding: 25px;
+  background: linear-gradient(to right, rgba(10, 147, 150, 0.05), rgba(148, 210, 189, 0.08));
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary);
+  position: relative;
+  z-index: 1;
+}
+
+.filters label {
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-right: 10px;
+  display: inline-block;
+}
+
+select {
+  padding: 12px 20px;
+  border: 2px solid rgba(10, 147, 150, 0.2);
+  border-radius: var(--border-radius-sm);
+  background-color: white;
+  font-size: 16px;
+  min-width: 220px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-dark);
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230a9396' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+select:hover:not([disabled]) {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10, 147, 150, 0.1);
+}
+
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(10, 147, 150, 0.15);
+}
+
+select[disabled] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+  border-color: #e2e8f0;
+}
+
+/* Google Maps Container Styling */
+#map {
+  height: 400px;
+  width: 100%;
+  margin: 35px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 2px solid rgba(10, 147, 150, 0.2);
+}
+
+/* Add map loading animation */
+#map::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--background), #fff, var(--background));
+  background-size: 200% 100%;
+  animation: mapLoading 1.5s infinite;
+  z-index: -1;
+}
+
+@keyframes mapLoading {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Google Maps Custom Info Window */
+.gm-style .gm-style-iw {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.map-info-window {
+  padding: 5px;
+  max-width: 250px;
+}
+
+.map-info-window h3 {
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.map-info-window p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Table section styling - COMPLETELY REVISED for column headings */
+#results {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* COMPLETELY REVISED TABLE STYLING for column headings */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+  background: white;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+/* Column headers styling */
+thead tr {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+thead th {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* First column is for parameter names */
+tbody tr th:first-child {
+  background: var(--primary-dark);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 15px;
+  width: 180px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cells in the table body */
+tbody tr td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(10, 147, 150, 0.08);
+  transition: var(--transition);
+  font-size: 15px;
+}
+
+/* Subtle ripple effect on header */
+th::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  transform: translateY(-100%);
+  transition: transform 0.6s;
+}
+
+th:hover::after {
+  transform: translateY(0);
+}
+
+/* Zebra striping for rows */
+tbody tr:nth-child(even) {
+  background-color: rgba(10, 147, 150, 0.03);
+}
+
+tbody tr:hover {
+  background-color: rgba(10, 147, 150, 0.08);
+}
+
+/* Conditional styling for measurement values */
+td[data-quality="good"] {
+  color: var(--success);
+  font-weight: 500;
+}
+
+td[data-quality="warning"] {
+  color: var(--warning);
+  font-weight: 500;
+}
+
+td[data-quality="bad"] {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+/* Styling for empty table message */
+td[colspan] {
+  text-align: center;
+  padding: 40px;
+  color: var(--neutral);
+  font-style: italic;
+  font-size: 16px;
+  background: linear-gradient(to right, rgba(10, 147, 150, 0.02), rgba(10, 147, 150, 0.05), rgba(10, 147, 150, 0.02));
+}
+
+/* Map marker bounce animation */
+@keyframes markerBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Map marker pulse animation */
+@keyframes markerPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Map controls customization */
+.gm-style-cc {
+  display: none;
+}
+
+.gm-style-mtc button {
+  border-radius: 4px !important;
+  margin: 10px 5px !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+    padding: 30px 20px;
+  }
+  
+  #map {
+    height: 350px;
+  }
+  
+  tbody tr th:first-child {
+    width: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  #map {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 15px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+  }
+  
+  select {
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  #map {
+    height: 250px;
+  }
+  
+  tbody tr th:first-child {
+    width: 130px;
+    font-size: 13px;
+  }
+}
+
+/* Tablet landscape view optimization */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    padding: 30px 25px;
+  }
+  
+  #map {
+    height: 350px;
+  }
+  
+  .filters {
+    flex-direction: row;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Beautiful animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.container {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+td[colspan] {
+  animation: pulse 2s infinite;
+}
+
+/* Add shimmer effect for loading states */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Add cool water-droplet effect on interact */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+select:active::after,
+td:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: rgba(10, 147, 150, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s ease-out;
+}
+
+/* Water Wave Animation Effect at the bottom of container */
+.container::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-image: 
+    radial-gradient(ellipse at 50% 150%, rgba(10, 147, 150, 0.4) 0%, rgba(10, 147, 150, 0) 70%),
+    radial-gradient(ellipse at 80% 150%, rgba(10, 147, 150, 0.4) 0%, rgba(10, 147, 150, 0) 70%),
+    radial-gradient(ellipse at 20% 150%, rgba(10, 147, 150, 0.4) 0%, rgba(10, 147, 150, 0) 70%);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Map controls enhancements */
+.gm-svpc, .gm-fullscreen {
+  margin-top: 10px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden;
+}
+
+/* Custom styling for map markers */
+.custom-marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--primary);
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-marker::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0 8px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Map Legend */
+.map-legend {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-good {
+  background-color: var(--success);
+}
+
+.legend-warning {
+  background-color: var(--warning);
+}
+
+.legend-bad {
+  background-color: var(--danger);
+}

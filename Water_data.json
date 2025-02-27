@@ -1,0 +1,148 @@
+{
+    "WaterBodiesData": {
+        "Station_30006": {
+            "station_name": "Ganga at Bijnor (U.P.) (IRBM)",
+            "river_name": "Entry point of Uttar Pradesh",
+            "state": "CPCB-HQ, Delhi",
+            "readings": {
+                "1688169600": {
+                    "tds": 390.85,
+                    "pH": 7.14,
+                    "dissolved_oxygen": 5.83,
+                    "bod": 2.23,
+                    "fecal_coliform": 64457,
+                    "total_coliform": 128914,
+                    "lat": 29.373472,
+                    "lon": 78.040972,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_30075": {
+            "station_name": "Ganga at Tarighat Ghazipur (U.P.) (IRBM)",
+            "river_name": "Exit point of Uttar Pradesh",
+            "state": "RD-Lucknow",
+            "readings": {
+                "1688169600": {
+                    "tds": 262.61,
+                    "pH": 6.87,
+                    "dissolved_oxygen": 7.89,
+                    "bod": 1.34,
+                    "fecal_coliform": 75014,
+                    "total_coliform": 150028,
+                    "lat": 25.587222,
+                    "lon": 83.605361,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_10113": {
+            "station_name": "River Ganga at U/s Jail Ghat, Buxar (Bihar) (NWMP)",
+            "river_name": "Entry point of Bihar",
+            "state": "Bihar",
+            "readings": {
+                "1688169600": {
+                    "tds": 235.17,
+                    "pH": 7.48,
+                    "dissolved_oxygen": 7.9,
+                    "bod": 1.3,
+                    "fecal_coliform": 17000,
+                    "total_coliform": 22000,
+                    "lat": 25.51994,
+                    "lon": 83.900847,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_30076": {
+            "station_name": "Ganga at Manjhighat (Bihar) (IRBM)",
+            "river_name": "District Chhapra, Bihar",
+            "state": "RD-Lucknow",
+            "readings": {
+                "1688169600": {
+                    "tds": 189.96,
+                    "pH": 7.06,
+                    "dissolved_oxygen": 7.78,
+                    "bod": 2.46,
+                    "fecal_coliform": 3416,
+                    "total_coliform": 6832,
+                    "lat": 25.73321,
+                    "lon": 84.62247,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_10143": {
+            "station_name": "River Ganga at D/s near cremation ghat (Bihar) (NWMP)",
+            "river_name": "Exit point of Bihar",
+            "state": "Bihar",
+            "readings": {
+                "1688169600": {
+                    "tds": 238.52,
+                    "pH": 7.68,
+                    "dissolved_oxygen": 7.5,
+                    "bod": 1.5,
+                    "fecal_coliform": 7900,
+                    "total_coliform": 13000,
+                    "lat": 25.281489,
+                    "lon": 87.247598,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_10159": {
+            "station_name": "River Ganga at Khagra, Beharampore (W.B.) (NWMP)",
+            "river_name": "Entry point of West Bengal",
+            "state": "West Bengal",
+            "readings": {
+                "1688169600": {
+                    "tds": 216.41,
+                    "pH": 7.36,
+                    "dissolved_oxygen": 9.2,
+                    "bod": 2.4,
+                    "fecal_coliform": 490,
+                    "total_coliform": 1300,
+                    "lat": 24.100623,
+                    "lon": 88.243263,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_1469": {
+            "station_name": "Ganga at Diamond Harbour (W.B.) (NWMP)",
+            "river_name": "Last point of West Bengal",
+            "state": "West Bengal",
+            "readings": {
+                "1688169600": {
+                    "tds": 3812.97,
+                    "pH": 7.9,
+                    "dissolved_oxygen": 6.3,
+                    "bod": 2.5,
+                    "fecal_coliform": 1100,
+                    "total_coliform": 2200,
+                    "lat": 22.183389,
+                    "lon": 88.186222,
+                    "timestamp": 1688169600
+                }
+            }
+        },
+        "Station_30005": {
+            "station_name": "Ganga at Sultanpur (U.K) (IRBM)",
+            "river_name": "Exit point of Uttarakhand",
+            "state": "CPCB-HQ, Delhi",
+            "readings": {
+                "1688169600": {
+                    "tds": 341.43,
+                    "pH": 6.79,
+                    "dissolved_oxygen": 6.28,
+                    "bod": 1.07,
+                    "fecal_coliform": 61493,
+                    "total_coliform": 122986,
+                    "lat": 29.641083,
+                    "lon": 78.10175,
+                    "timestamp": 1688169600
+                }
+            }
+        }
+    }
+}
