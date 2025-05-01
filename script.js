@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const riverSelect = document.getElementById("river");
     const dataTable = document.getElementById("data-table");
 
-    // Fetch JSON data from file
+    // Fetch JSON data from file   
     const response = await fetch("Water_data.json");
     const jsonData = await response.json();
     const stations = jsonData.WaterBodiesData;
