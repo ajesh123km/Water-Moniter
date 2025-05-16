@@ -3,7 +3,7 @@ let markers = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
     const stateSelect = document.getElementById("state"); 
-    const riverSelect = document.getElementById("river");
+    const riverSelect = document.getElementById("river"); 
     const dataTable = document.getElementById("data-table");
 
     // Fetch JSON data from file     
