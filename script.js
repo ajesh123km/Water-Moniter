@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         updateMap();
     });
 
-    function updateTable() {
+    function updateTable() { 
         dataTable.innerHTML = "";
 
         const selectedState = stateSelect.value;
@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 });
+
 
 // Initialize the map
 function initMap() {
